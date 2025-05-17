@@ -18,4 +18,9 @@ public interface JInheritance {
     static void staticMethod() {
         System.out.println("This is a static method in the interface.");
     }
+
+    // default method to be overridden in implementing class
+    default String overrideMethod() {
+        return "This is a default method in the interface which can be overridden.";
+    }
 }

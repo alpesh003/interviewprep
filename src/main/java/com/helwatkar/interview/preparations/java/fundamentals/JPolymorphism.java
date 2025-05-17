@@ -12,6 +12,10 @@ public class JPolymorphism implements JInheritance {
         System.out.println("This is the overloaded method with an integer parameter: " + number);
     }
 
+    public String overrideMethod() {
+        return "This is the overridden method in JPolymorphism class.";
+    }
+
     public static void main(String[] args) {
         JPolymorphism obj = new JPolymorphism();
         obj.display(); // Calls the overridden method
@@ -19,5 +23,6 @@ public class JPolymorphism implements JInheritance {
         obj.show(); // Calls the default method from the interface
         JInheritance.staticMethod(); // Calls the static method from the interface
         obj.getMessage(); // Calls the default method returning a value
+        obj.overrideMethod(); // Calls the overridden method with a return value
     }
 }
