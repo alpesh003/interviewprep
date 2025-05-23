@@ -1,5 +1,6 @@
 package com.helwatkar.interview.preparations.collectionsframework;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/compare")
+@Slf4j
 public class CompareController {
+
 
     @GetMapping("/welcomeCompareController")
     public String welcome() {
@@ -28,7 +31,14 @@ public class CompareController {
         movies.add(movie2);
         movies.add(movie3);
 
+        // Print all elements in the list
+        movies.forEach(movie -> log.info(movie.getTitle() + " - " + movie.getReleaseYear()));
+
+        // Sort the list using the compareTo method
         Collections.sort(movies);
+
+        // Print sorted elements
+        movies.stream().forEach(movie -> log.info(movie.getTitle() + " - " + movie.getReleaseYear()));
 
         return movies;
 
@@ -45,7 +55,11 @@ public class CompareController {
         movies.add(movie2);
         movies.add(movie3);
 
+        movies.stream().forEach(movie -> log.info(movie.getTitle() + " - " + movie.getReleaseYear()));
+
         Collections.sort(movies, new MovieCustomComparator());
+
+        movies.stream().forEach(movie -> log.info(movie.getTitle() + " - " + movie.getReleaseYear()));
 
         return movies;
     }
