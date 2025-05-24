@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/generics")
 public class GenericsController {
+    @GetMapping("/welcome")//http://localhost:8080/api/v1/generics/welcome
+    public String welcome() {
+        return "Welcome to Generics Controller!";
+    }
     @GetMapping("/getGenericsElements")
     public String getGenericsElement() {
         GenericBox<String> stringBox = new GenericBox<>();
