@@ -15,7 +15,7 @@ import java.util.List;
 public class CompareController {
 
 
-    @GetMapping("/welcomeCompareController")
+    @GetMapping("/welcome")
     public String welcome() {
         return "Welcome to Compare Controller";
     }
